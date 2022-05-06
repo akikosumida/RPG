@@ -11,7 +11,7 @@ public class Slime extends Monster{
 	public void attack(Living target) {
 		int nn = offensive * Rand.get(10);
 		target.hp -= nn; 
-		System.out.print(this.name + "が体当たりで攻撃！");
+		System.out.printf("%sが体当たりで攻撃！",this.name);
 		System.out.println(target.name + "に" + nn + "のダメージを与えた。");
 	}
 }

@@ -11,7 +11,7 @@ public class Dragon extends Monster {
 	public void attack(Living target) {
 		int nn = offensive * Rand.get(10);
 		target.hp -= nn; 
-		System.out.print(this.name + "が炎で攻撃！");
+		System.out.printf("%sが炎で攻撃！",this.name);
 		System.out.println(target.name + "に" + nn + "のダメージを与えた。");
 	}
 }
