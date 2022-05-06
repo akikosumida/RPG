@@ -21,14 +21,14 @@ public class Main {
 		while (true) {
 
 			System.out.println("人間のターン!");
-			Human attackerH = humanList.get(Rand.get(humanList.size()));
-			Monster targetM = monsterList.get(Rand.get(monsterList.size()));
+			Living attacker = humanList.get(Rand.get(humanList.size()));
+			Living target = monsterList.get(Rand.get(monsterList.size()));
 
-			attackerH.attack(targetM);
+			attacker.attack(target);
 
-			if (targetM.hp <= 0) {
-				monsterList.remove(targetM);
-				System.out.println(targetM.name + "は倒れた。");
+			if (target.hp <= 0) {
+				monsterList.remove(target);
+				System.out.println(target.name + "は倒れた。");
 			}
 			if (monsterList.isEmpty()) {
 				System.out.println("勇者達は勝利した！");
@@ -36,14 +36,14 @@ public class Main {
 			}
 
 			System.out.println("モンスターのターン!");
-			Monster attackerM = monsterList.get(Rand.get(monsterList.size()));
-			Human targetH = humanList.get(Rand.get(humanList.size()));
+			attacker = monsterList.get(Rand.get(monsterList.size()));
+			target = humanList.get(Rand.get(humanList.size()));
 
-			attackerM.attack(targetH);
+			attacker.attack(target);
 
-			if (targetH.hp <= 0) {
-				humanList.remove(targetH);
-				System.out.println(targetH.name + "は倒れた。");
+			if (target.hp <= 0) {
+				humanList.remove(target);
+				System.out.println(target.name + "は倒れた。");
 			}
 
 			if (humanList.isEmpty()) {
